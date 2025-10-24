@@ -1,4 +1,26 @@
-<<<<<<< HEAD
+# Enhanced Calculator
+
+This is a simple yet improved console-based calculator built using Java.  
+It performs basic arithmetic operations, scientific calculations, and even some quick unit conversions.  
+The goal of this project was to strengthen understanding of Java basics like methods, user input, and control flow.
+
+##  Features
+- Basic Arithmetic: Addition, Subtraction, Multiplication, and Division  
+- Scientific Functions: Square Root and Exponentiation  
+- Unit Conversions: Temperature (Celsius ↔ Fahrenheit) and Currency (INR ↔ USD)
+
+
+##  How to Run
+1. Make sure you have Java installed on your system.  
+2. Open your terminal or command prompt inside the project folder.  
+3. Compile the program:
+   ```bash
+   javac EnhancedCalculator.java
+4. Run the program:
+   java EnhancedCalculator
+
+
+
 ## Sample Data & Test Cases
 
 | No. | Operation | Input | Expected Output |
@@ -23,7 +45,6 @@
 | 18  | Addition | 0 + 0 | 0 |
 | 19  | Multiplication | 0 * 10 | 0 |
 | 20  | Subtraction | 50 - 50 | 0 |
-=======
-# Shadowfox
-Repository for Shadowfox programs
->>>>>>> 158fe3927d2946341ac0911230dd2fc94e5900b2
+
+
+This project was developed as part of the ShadowFox learning tasks to demonstrate practical Java skills.
