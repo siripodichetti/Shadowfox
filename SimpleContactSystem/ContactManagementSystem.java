@@ -40,12 +40,12 @@ public class ContactManagementSystem {
         int choice;
         do {
             System.out.println("\n=== 📇 Contact Management System ===");
-            System.out.println("1️⃣ Add Contact");
-            System.out.println("2️⃣ View All Contacts (Sorted)");
-            System.out.println("3️⃣ Update Contact");
-            System.out.println("4️⃣ Delete Contact");
-            System.out.println("5️⃣ Exit");
-            System.out.println("6️⃣ Search Contact by Name");
+            System.out.println("1 Add Contact");
+            System.out.println("2 View All Contacts (Sorted)");
+            System.out.println("3 Update Contact");
+            System.out.println("4 Delete Contact");
+            System.out.println("5 Exit");
+            System.out.println("6 Search Contact by Name");
             System.out.print("Enter your choice: ");
             choice = input.nextInt();
             input.nextLine(); // consume newline
@@ -65,22 +65,31 @@ public class ContactManagementSystem {
     private static void addContact() {
         System.out.print("Enter name: ");
         String name = input.nextLine();
-        System.out.print("Enter phone: ");
-        String phone = input.nextLine();
-        System.out.print("Enter email: ");
-        String email = input.nextLine();
+
+        String phone;
+        do {
+            System.out.print("Enter phone (10 digits): ");
+            phone = input.nextLine();
+            if (!isValidPhone(phone)) System.out.println("❌ Invalid phone number. Try again.");
+        } while (!isValidPhone(phone));
+
+        String email;
+        do {
+            System.out.print("Enter email: ");
+            email = input.nextLine();
+            if (!isValidEmail(email)) System.out.println("❌ Invalid email. Try again.");
+        } while (!isValidEmail(email));
 
         contacts.add(new Contact(name, phone, email));
-        System.out.println("✅ Contact added successfully!");
+        System.out.println(" Contact added successfully!");
     }
 
     private static void viewContacts() {
         if (contacts.isEmpty()) {
             System.out.println("📭 No contacts available.");
         } else {
-            // Sort contacts alphabetically before displaying
+            // Sort alphabetically by name
             Collections.sort(contacts, Comparator.comparing(Contact::getName, String.CASE_INSENSITIVE_ORDER));
-
             System.out.println("\n--- Contact List (Sorted Alphabetically) ---");
             for (int i = 0; i < contacts.size(); i++) {
                 System.out.println((i + 1) + ". " + contacts.get(i));
@@ -97,10 +106,19 @@ public class ContactManagementSystem {
         input.nextLine();
 
         if (index >= 0 && index < contacts.size()) {
-            System.out.print("Enter new phone: ");
-            String phone = input.nextLine();
-            System.out.print("Enter new email: ");
-            String email = input.nextLine();
+            String phone;
+            do {
+                System.out.print("Enter new phone (10 digits): ");
+                phone = input.nextLine();
+                if (!isValidPhone(phone)) System.out.println("❌ Invalid phone number. Try again.");
+            } while (!isValidPhone(phone));
+
+            String email;
+            do {
+                System.out.print("Enter new email: ");
+                email = input.nextLine();
+                if (!isValidEmail(email)) System.out.println("❌ Invalid email. Try again.");
+            } while (!isValidEmail(email));
 
             contacts.get(index).setPhone(phone);
             contacts.get(index).setEmail(email);
@@ -116,6 +134,7 @@ public class ContactManagementSystem {
 
         System.out.print("Enter contact number to delete: ");
         int index = input.nextInt() - 1;
+        input.nextLine();
 
         if (index >= 0 && index < contacts.size()) {
             contacts.remove(index);
@@ -146,5 +165,14 @@ public class ContactManagementSystem {
         if (!found) {
             System.out.println("❌ No contacts found with the name: " + searchName);
         }
+    }
+
+    // Validation methods
+    private static boolean isValidPhone(String phone) {
+        return phone.matches("\\d{10}");
+    }
+
+    private static boolean isValidEmail(String email) {
+        return email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
     }
 }
