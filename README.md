@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Sample Data & Test Cases
 
 | No. | Operation | Input | Expected Output |
@@ -22,3 +23,7 @@
 | 18  | Addition | 0 + 0 | 0 |
 | 19  | Multiplication | 0 * 10 | 0 |
 | 20  | Subtraction | 50 - 50 | 0 |
+=======
+# Shadowfox
+Repository for Shadowfox programs
+>>>>>>> 158fe3927d2946341ac0911230dd2fc94e5900b2
