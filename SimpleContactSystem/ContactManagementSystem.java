@@ -39,7 +39,7 @@ public class ContactManagementSystem {
     public static void main(String[] args) {
         int choice;
         do {
-            System.out.println("\n=== 📇 Contact Management System ===");
+            System.out.println("\n===  Contact Management System ===");
             System.out.println("1 Add Contact");
             System.out.println("2 View All Contacts (Sorted)");
             System.out.println("3 Update Contact");
@@ -55,7 +55,7 @@ public class ContactManagementSystem {
                 case 2 -> viewContacts();
                 case 3 -> updateContact();
                 case 4 -> deleteContact();
-                case 5 -> System.out.println("👋 Exiting... Thank you!");
+                case 5 -> System.out.println(" Exiting... Thank you!");
                 case 6 -> searchContact();
                 default -> System.out.println("⚠️ Invalid choice. Try again.");
             }
@@ -86,7 +86,7 @@ public class ContactManagementSystem {
 
     private static void viewContacts() {
         if (contacts.isEmpty()) {
-            System.out.println("📭 No contacts available.");
+            System.out.println(" No contacts available.");
         } else {
             // Sort alphabetically by name
             Collections.sort(contacts, Comparator.comparing(Contact::getName, String.CASE_INSENSITIVE_ORDER));
@@ -122,7 +122,7 @@ public class ContactManagementSystem {
 
             contacts.get(index).setPhone(phone);
             contacts.get(index).setEmail(email);
-            System.out.println("🔄 Contact updated successfully!");
+            System.out.println(" Contact updated successfully!");
         } else {
             System.out.println("❌ Invalid contact number.");
         }
@@ -146,7 +146,7 @@ public class ContactManagementSystem {
 
     private static void searchContact() {
         if (contacts.isEmpty()) {
-            System.out.println("📭 No contacts available to search.");
+            System.out.println(" No contacts available to search.");
             return;
         }
 
