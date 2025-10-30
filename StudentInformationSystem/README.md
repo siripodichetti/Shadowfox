@@ -5,7 +5,8 @@ This system allows users to add, edit, delete, view, and clear student records t
 
 ---
 
-## Features
+## Features 
+
 -  Add new student details easily  
 -  Edit existing student information  
 -  Delete records by student ID  
@@ -15,16 +16,30 @@ This system allows users to add, edit, delete, view, and clear student records t
 
 ---
 
+### Operations
+
+Add: Add a new student’s details (Name, ID, Course, Phone, Gender).
+
+Edit: Modify an existing student record by entering their ID.
+
+Delete: Remove a student record using the ID.
+
+View All: Display all stored student records.
+
+
+
 ## How to Run
 
 Make sure you have **Java JDK 8 or above** installed.
 
-### Steps
+### Steps to run and Sample Data
+
 ```bash
 javac StudentInformationSystem.java
 java StudentInformationSystem
 
-## Sample Data 
+
+
 
 | Name          | ID   | Course                  | Phone      | Gender |
 | ------------- | ---- | ----------------------- | ---------- | ------ |
@@ -50,19 +65,3 @@ java StudentInformationSystem
 | Divya Pillai  | S120 | IT Management           | 9733112211 | Female |
 
 
-## Operations
-
-Add:
-Used to add new student details like name, ID, course, phone, and gender.
-
-Edit:
-Used to update or change details of an existing student by entering the same ID.
-
-Delete:
-Removes a student record using the student ID.
-
-View All:
-Shows all student records in the display area.
-
-Clear:
-Clears all input fields to enter new data.
