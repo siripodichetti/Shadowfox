@@ -6,7 +6,7 @@ public class EnhancedCalculator {
         int mainChoice;
 
         System.out.println("====================================");
-        System.out.println("     🧮 Welcome to ShadowFox Calculator");
+        System.out.println("      Welcome to ShadowFox Calculator");
         System.out.println("====================================");
 
         do {
@@ -29,7 +29,7 @@ public class EnhancedCalculator {
                     unitConversions(input);
                     break;
                 case 4:
-                    System.out.println("✅ Thank you for using the ShadowFox Calculator!");
+                    System.out.println(" Thank you for using the ShadowFox Calculator!");
                     break;
                 default:
                     System.out.println("⚠️ Invalid choice. Please try again.");
@@ -107,8 +107,8 @@ public class EnhancedCalculator {
     // ---------- UNIT CONVERSIONS ----------
     static void unitConversions(Scanner input) {
         System.out.println("\n--- Unit Conversions ---");
-        System.out.println("1. 🌡 Temperature (Celsius/Fahrenheit)");
-        System.out.println("2. 💰 Currency (INR/USD)");
+        System.out.println("1.  Temperature (Celsius/Fahrenheit)");
+        System.out.println("2.  Currency (INR/USD)");
         System.out.print("Choose conversion: ");
         int choice = input.nextInt();
 
